@@ -27,5 +27,8 @@ public class BookEntity {
     @Enumerated(EnumType.STRING)
     private GenreEnum genre;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    private AuthorEntity author;
+
 
 }
