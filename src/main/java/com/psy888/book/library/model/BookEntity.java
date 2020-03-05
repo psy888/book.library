@@ -7,7 +7,7 @@ import java.time.Year;
 
 @Entity
 @Data
-public class Book {
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,10 @@ public class Book {
     private Year releaseDate;
 
     private String booking;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private GenreEnum genre;
 
 
 }
