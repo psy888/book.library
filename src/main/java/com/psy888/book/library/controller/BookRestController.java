@@ -32,11 +32,10 @@ public class BookRestController {
 
     }
 
-    // request example: localhost:8080/api/books/genre?genres=ROMAN,FANTASY
-    @GetMapping("genre")
-    public ResponseEntity<List<BookEntity>> findBooksByGenre(@RequestParam Set<GenreEnum> genres){
-        System.out.println(genres.toString());
-        return new ResponseEntity<>(service.findBooksByGenre(genres), HttpStatus.OK);
+    // request example: localhost:8080/api/books/filter?genre=ROMAN,FANTASY
+    @GetMapping("filter")
+    public ResponseEntity<List<BookEntity>> findBooksByGenre(@RequestParam Set<GenreEnum> genre){
+        return new ResponseEntity<>(service.findBooksByGenre(genre), HttpStatus.OK);
     }
 
 
